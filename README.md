@@ -34,7 +34,11 @@ data-sidebar-collapsible="1" on elements
 put padding on elements by hand style="padding-left: 256px;
 
 ```php 
-<?php Sidebar::begin() ?>
+<?php Sidebar::begin([
+
+'collapseText' => 'Collapse' // optional text in button, defaults to Collapse
+
+]) ?>
 
 <div>
 <?= Html::a('<i class="fas fa-trash"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-danger"]) ?>

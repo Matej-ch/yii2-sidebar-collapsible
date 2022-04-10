@@ -59,6 +59,6 @@ class Sidebar extends Widget
   <line x1="12" y1="8" x2="12" y2="16"></line>
   <line x1="16" y1="12" x2="12" y2="8"></line>
 </svg>
-    <span data-sidebar-hide="1">Collapse</span></a></div></div>';
+    <span data-sidebar-hide="1">'.$this->collapseText.'</span></a></div></div>';
     }
 }
