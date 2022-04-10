@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const sideBarEl = sideBarToggleBtn.closest('.sidebar');
             sideBarEl.classList.remove('open');
             sideBarEl.classList.add('collapsed');
+            sideBarToggleBtn.querySelector('svg').style.transform = 'rotate(90deg)';
+            toggleHiddenElements(false);
+            updatePadding(sideBarEl.offsetWidth);
         }
     }
 
