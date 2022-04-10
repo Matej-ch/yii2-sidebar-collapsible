@@ -23,6 +23,7 @@ to the require section of your `composer.json` file.
 
 Setup
 -----
+-----
 
 #### Elements with **[data-sidebar-hide]** will be hidden when sidebar is collapsed
 
@@ -31,6 +32,7 @@ Example
 <a><i class="fa fa-eye"></i> <span data-sidebar-hide='1'>This text is shown only when sidebar is not collapsed</span></a>
 ``` 
 
+-----
 #### Elements with **[data-sidebar-collapsible]** will update their left padding when is sidebar size has changed
 Example
 ```html
@@ -47,6 +49,10 @@ Example
 //'sidebarCacheName' => 'test', //Optional Name for saving state in localstorage
 'widthOpen' => '256px', //Optional size when sidebar is opened
 'widthCollapsed' => '70px' //Optional size when sidebar is colapsed
+'topMobile' => '0px' //Optional
+'leftMobile' => '0px' //Optional
+'position' => 'fixed' //Optional
+'positionMobile' => 'fixed' //Optional
 ]) ?>
 
 <div>

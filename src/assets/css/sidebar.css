@@ -75,3 +75,10 @@
     color: #9ba8b5;
     text-decoration: none;
 }
+
+@media (max-width: 1024px) {
+    .js-collapse-sidebar {
+        justify-content:center;
+    }
+}
+

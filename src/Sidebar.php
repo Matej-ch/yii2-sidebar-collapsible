@@ -21,10 +21,34 @@ class Sidebar extends Widget
     public $top = '0px';
 
     /**
+     * Top position from where sidebar starts for media query max-width: 1024px
+     * @var string
+     */
+    public $topMobile='0px';
+
+    /**
      * Left position from where sidebar starts
      * @var string
      */
     public $left = '0px';
+
+    /**
+     * Left position from where sidebar starts for media query max-width: 1024px
+     * @var string
+     */
+    public $leftMobile='0px';
+
+    /**
+     * Css position of sidebar element for desktop
+     * @var string
+     */
+    public $position = 'fixed';
+
+    /**
+     * Css position of sidebar element for media query max-width: 1024px
+     * @var string
+     */
+    public $positionMobile = 'fixed';
 
     public $widthOpen = '256px';
 
@@ -60,13 +84,14 @@ class Sidebar extends Widget
 
         $html .= $this->renderBottom();
 
-        return Html::tag('div', $html, ['class' => 'sidebar open','style' => "top:$this->top;left:$this->left", 'data' => ['sidebar' => $this->sidebarCacheName]]);
+        return Html::tag('div', $html, ['class' => 'sidebar open','data' => ['sidebar' => $this->sidebarCacheName]]);
     }
 
     public function registerClientScript()
     {
         $view = $this->getView();
-        $view->registerCss(".sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
+        $view->registerCss(".sidebar {top:$this->top;left:$this->left;position:$this->position;} .sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
+        $view->registerCss("@media (max-width: 1024px) {.sidebar {top:$this->topMobile;left:$this->leftMobile;position:$this->positionMobile;}}");
         SidebarAsset::register($view);
     }
 
