@@ -14,6 +14,14 @@ class Sidebar extends Widget
      */
     public $collapseText = 'Collapse';
 
+    /**
+     * Top position from where sidebar starts
+     * @var string
+     */
+    private $top = '0px';
+
+    private $left = '0px';
+
     public function init()
     {
         parent::init();
@@ -38,7 +46,7 @@ class Sidebar extends Widget
 
         $html .= $this->renderBottom();
 
-        return Html::tag('div', $html, ['class' => 'sidebar open', 'data' => ['sidebar' => 'complaint-sidebar']]);
+        return Html::tag('div', $html, ['class' => 'sidebar open','style' => "top:$this->top;left:$this->left", 'data' => ['sidebar' => 'complaint-sidebar']]);
     }
 
     public function registerClientScript()

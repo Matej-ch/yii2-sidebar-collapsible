@@ -37,6 +37,8 @@ put padding on elements by hand style="padding-left: 256px;
 <?php Sidebar::begin([
 
 'collapseText' => 'Collapse' // optional text in button, defaults to Collapse
+'top' => '75px' // Fixed top, where sidebar begins, defaults to 0px
+'left' => '0px' // Fixed left, where sidebar begins on letf side, defaults to 0px
 
 ]) ?>
 
