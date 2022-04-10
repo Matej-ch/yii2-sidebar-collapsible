@@ -41,10 +41,12 @@ Example
 ```php 
 <?php Sidebar::begin([
 
-'collapseText' => 'Collapse' // optional text in button, defaults to Collapse
-'top' => '75px' // Fixed top, where sidebar begins, defaults to 0px
-'left' => '0px' // Fixed left, where sidebar begins on letf side, defaults to 0px
-//'sidebarCacheName' => 'test' // Name for saving state in localstorage
+'collapseText' => 'Collapse' // Optional text in button, defaults to Collapse
+'top' => '75px' //Optional Fixed top, where sidebar begins, defaults to 0px
+'left' => '0px' //Optional Fixed left, where sidebar begins on letf side, defaults to 0px
+//'sidebarCacheName' => 'test', //Optional Name for saving state in localstorage
+'widthOpen' => '256px', //Optional size when sidebar is opened
+'widthCollapsed' => '70px' //Optional size when sidebar is colapsed
 ]) ?>
 
 <div>

@@ -26,6 +26,10 @@ class Sidebar extends Widget
      */
     public $left = '0px';
 
+    public $widthOpen = '256px';
+
+    public $widthCollapsed = '70px';
+
     /**
      * This name is used in localstorage to remember state of sidebar
      * @var string
@@ -62,7 +66,7 @@ class Sidebar extends Widget
     public function registerClientScript()
     {
         $view = $this->getView();
-
+        $view->registerCss(".sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
         SidebarAsset::register($view);
     }
 
