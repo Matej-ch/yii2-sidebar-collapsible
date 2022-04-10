@@ -18,9 +18,9 @@ class Sidebar extends Widget
      * Top position from where sidebar starts
      * @var string
      */
-    private $top = '0px';
+    public $top = '0px';
 
-    private $left = '0px';
+    public $left = '0px';
 
     public function init()
     {
