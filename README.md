@@ -43,32 +43,32 @@ Example
 ```php 
 <?php Sidebar::begin([
 
-'collapseText' => 'Collapse' // Optional text in button, defaults to Collapse
-'top' => '75px' //Optional Fixed top, where sidebar begins, defaults to 0px
-'left' => '0px' //Optional Fixed left, where sidebar begins on letf side, defaults to 0px
+'collapseText' => 'Collapse', // Optional text in button, defaults to Collapse
+'top' => '75px', //Optional Fixed top, where sidebar begins, defaults to 0px
+'left' => '0px', //Optional Fixed left, where sidebar begins on letf side, defaults to 0px
 //'sidebarCacheName' => 'test', //Optional Name for saving state in localstorage
 'widthOpen' => '256px', //Optional size when sidebar is opened
-'widthCollapsed' => '70px' //Optional size when sidebar is colapsed
-'topMobile' => '0px' //Optional
-'leftMobile' => '0px' //Optional
-'position' => 'fixed' //Optional
+'widthCollapsed' => '70px', //Optional size when sidebar is colapsed
+'topMobile' => '0px', //Optional
+'leftMobile' => '0px', //Optional
+'position' => 'fixed', //Optional
 'positionMobile' => 'fixed' //Optional
 ]) ?>
 
 <div>
-<?= Html::a('<i class="fas fa-trash"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-danger"]) ?>
+<?= Html::a('<i class="fas fa-trash"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', '#', ['class' => "btn btn-danger"]) ?>
 </div>
 
 <div>
-<?= Html::a('<i class="fas fa-edit"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-primary"]) ?>
+<?= Html::a('<i class="fas fa-edit"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', '#', ['class' => "btn btn-primary"]) ?>
 </div>
 
 <div>
-<?= Html::a('<i class="fas fa-eye"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-success"]) ?>
+<?= Html::a('<i class="fas fa-eye"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', '#', ['class' => "btn btn-success"]) ?>
 </div>
 
 <div>
-<?= Html::a('<i class="fas fa-check"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-warning"]) ?>
+<?= Html::a('<i class="fas fa-check"></i> <span data-sidebar-hide="1">text will hide on collapse</span>','#', ['class' => "btn btn-warning"]) ?>
 </div>
 
 <?php Sidebar::end() ?>
