@@ -1,0 +1,29 @@
+{
+  "name": "matejch/yii2-sidebar-collapsible",
+  "description": "Add sidebar that can be collapsed to smaller version",
+  "type": "yii2-widget",
+  "version": "1.1.0",
+  "keywords": ["yii2","extension","sidebar","widget","collapsible"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matej Chalachan",
+      "email": "matejCH.work@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.0",
+    "yiisoft/yii2": "~2.0.42"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "matejch\\yii2sidebar\\": "src/"
+    }
+  }
+}

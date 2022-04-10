@@ -1,0 +1,121 @@
+.js-collapse::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -10px;
+    bottom: 6px;
+    width: 5px;
+    border-radius: 0px 3px 3px 0px;
+    background-color: transparent;
+    transition: background-color 0.15s linear 0s;
+}
+
+.sidebar {
+    background: rgba(33, 33, 33, 1);
+    color: rgb(149, 134, 165);
+    line-height: 1;
+    padding: 0px 0px 2px;
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    bottom: 0px;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    z-index: 1020;
+    border-right: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.collapse-btn-container {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 8px 0;
+    padding: 0 10px;
+    overflow: hidden
+}
+
+.collapse-top-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+    flex: 1 1 0%;
+}
+
+.collapse-top-inner {
+    overflow: hidden;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+    padding: 0 10px;
+}
+
+.collapse-bottom-container {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.sidebar.open {
+    width: 256px;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        inset: 0px 0px auto;
+        height: 54px;
+        width: auto;
+        padding: 0px 8px;
+        -moz-box-align: center;
+        align-items: center;
+        border-right: medium none;
+        border-bottom: 1px solid transparent;
+        flex-direction: row;
+        top: 55px;
+        position: absolute;
+    }
+
+    .collapse-btn-container {
+        display: none;
+    }
+
+    .collapse-top-container {
+        height: 100%;
+        -moz-box-align: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .collapse-bottom-container {
+        flex-direction: row;
+    }
+
+    .collapse-top-inner {
+        overflow-y: visible;
+        flex-direction: row;
+        height: 100%;
+        -moz-box-align: center;
+        align-items: center;
+        border-right: 1px solid rgb(62, 52, 70);
+        padding: 0;
+        margin-right: 4px;
+        box-shadow: rgba(0, 0, 0, 0.15) -10px 0px 10px inset;
+    }
+
+    .sidebar.open, .sidebar.collapsed {
+        width: 100%;
+    }
+
+    [data-sidebar-collapsible] {
+        padding-left: 0 !important;
+    }
+}

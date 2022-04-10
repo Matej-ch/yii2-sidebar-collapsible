@@ -1,0 +1,33 @@
+{
+  "name": "yii2-sidebar-collapsible",
+  "version": "1.0.0",
+  "description": "Sidebar widget\r ====================\r Add sidebar that can be collapsed to smaller version",
+  "main": "",
+  "scripts": {
+    "postcss:watch": "postcss src/assets/css/sidebar.css -o src/assets/css/sidebar.min.css --watch",
+    "postcss:compile": "postcss src/assets/css/sidebar.css -o src/assets/css/sidebar.min.css",
+    "babel:compile": "babel src/assets/js/sidebar.js -o src/assets/js/sidebar.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matej-ch/yii2-sidebar-collapsible.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matej-ch/yii2-sidebar-collapsible/issues"
+  },
+  "homepage": "https://github.com/Matej-ch/yii2-sidebar-collapsible#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-preset-minify": "^0.5.1",
+    "cssnano": "^5.0.10",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^7.0.0"
+  }
+}
