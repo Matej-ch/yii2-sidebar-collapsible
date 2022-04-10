@@ -34,7 +34,7 @@ Example
 #### Elements with **[data-sidebar-collapsible]** will update their left padding when is sidebar size has changed
 Example
 ```html
-<div style="padding-left: 256px;" data-sidebar-collapsible="1"></div>
+<div data-sidebar-collapsible="1"></div>
 ```
 
 ### Sidebar example with custom content

@@ -4,6 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('body').addEventListener('click', checkSidebar);
 
+    const mediaQuery = window.matchMedia('(max-width: 1024px)')
+    function handleOrientationChange(evt) {
+        if (evt.matches) {
+            const sideBarToggleBtn = document.querySelector('.js-collapse-sidebar');
+            const sideBarEl = sideBarToggleBtn.closest('.sidebar');
+            sideBarEl.classList.remove('open');
+            sideBarEl.classList.add('collapsed');
+        }
+    }
+
+    mediaQuery.addEventListener('change',handleOrientationChange);
+
+    handleOrientationChange(mediaQuery);
+
     function initSidebar() {
         const sideBarToggleBtn = document.querySelector('.js-collapse-sidebar');
         const sideBarEl = sideBarToggleBtn.closest('.sidebar');
