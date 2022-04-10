@@ -23,3 +23,35 @@ to the require section of your `composer.json` file.
 
 Setup
 -----
+
+
+[data-sidebar-hide] elements to hide when sidebar is collapsed
+
+[data-sidebar-collapsible] elements that change padding when sidebar is collapsed
+
+data-sidebar-collapsible="1" on elements
+
+put padding on elements by hand style="padding-left: 256px;
+
+```php 
+<?php Sidebar::begin() ?>
+
+<div>
+<?= Html::a('<i class="fas fa-trash"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-danger"]) ?>
+</div>
+
+<div>
+<?= Html::a('<i class="fas fa-edit"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-primary"]) ?>
+</div>
+
+<div>
+<?= Html::a('<i class="fas fa-eye"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-success"]) ?>
+</div>
+
+<div>
+<?= Html::a('<i class="fas fa-check"></i> <span data-sidebar-hide="1">text will hide on collapse</span>', #', ['class' => "btn btn-warning"]) ?>
+</div>
+
+<?php Sidebar::end() ?>
+
+```
