@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (localStorage.getItem(sidebarLocalStorageVarName)) {
             sideBarEl.classList.remove('open');
             sideBarEl.classList.add('collapsed');
-            sideBarToggleBtn.style.transform = 'rotate(-90deg)';
+            sideBarToggleBtn.querySelector('svg').style.transform = 'rotate(-90deg)';
 
             toggleHiddenElements(false);
 
