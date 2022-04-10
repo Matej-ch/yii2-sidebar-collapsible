@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').addEventListener('click', checkSidebar);
 
     function initSidebar() {
-        const sideBarEl = document.querySelector('.js-collapse-sidebar').closest('.sidebar');
+        const sideBarToggleBtn = document.querySelector('.js-collapse-sidebar');
+        const sideBarEl = sideBarToggleBtn.closest('.sidebar');
         const sidebarLocalStorageVarName = sideBarEl.dataset.sidebar;
         if (localStorage.getItem(sidebarLocalStorageVarName)) {
             sideBarEl.classList.remove('open');
             sideBarEl.classList.add('collapsed');
-            sideBarEl.querySelector('.js-collapse-icon').classList.remove('fa-chevron-circle-right');
-            sideBarEl.querySelector('.js-collapse-icon').classList.add('fa-chevron-circle-left');
+            sideBarToggleBtn.style.transform = 'rotate(-90deg)';
 
             toggleHiddenElements(false);
 
@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sideBarEl = e.target.closest('.sidebar');
             const sidebarLocalStorageVarName = sideBarEl.dataset.sidebar;
 
-            e.target.querySelector('.js-collapse-icon').classList.toggle('fa-chevron-circle-left');
-            e.target.querySelector('.js-collapse-icon').classList.toggle('fa-chevron-circle-right');
+            e.target.querySelector('.js-collapse-icon').style.transform = 'rotate(90deg)';
 
             if (sideBarEl.classList.contains('open')) {
                 sideBarEl.classList.remove('open');
