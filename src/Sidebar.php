@@ -20,7 +20,17 @@ class Sidebar extends Widget
      */
     public $top = '0px';
 
+    /**
+     * Left position from where sidebar starts
+     * @var string
+     */
     public $left = '0px';
+
+    /**
+     * This name is used in localstorage to remember state of sidebar
+     * @var string
+     */
+    public $sidebarCacheName = 'sidebar-collapse';
 
     public function init()
     {
@@ -46,7 +56,7 @@ class Sidebar extends Widget
 
         $html .= $this->renderBottom();
 
-        return Html::tag('div', $html, ['class' => 'sidebar open','style' => "top:$this->top;left:$this->left", 'data' => ['sidebar' => 'complaint-sidebar']]);
+        return Html::tag('div', $html, ['class' => 'sidebar open','style' => "top:$this->top;left:$this->left", 'data' => ['sidebar' => $this->sidebarCacheName]]);
     }
 
     public function registerClientScript()

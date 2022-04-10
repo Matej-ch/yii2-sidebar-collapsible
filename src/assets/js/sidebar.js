@@ -26,7 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const sideBarEl = e.target.closest('.sidebar');
             const sidebarLocalStorageVarName = sideBarEl.dataset.sidebar;
 
-            e.target.querySelector('.js-collapse-icon').style.transform = 'rotate(90deg)';
+            const transformStyle = e.target.querySelector('.js-collapse-icon').style.transform;
+
+            if(transformStyle === 'rotate(90deg)') {
+                e.target.querySelector('.js-collapse-icon').style.transform = 'rotate(-90deg)';
+            } else {
+                e.target.querySelector('.js-collapse-icon').style.transform = 'rotate(90deg)';
+            }
+
 
             if (sideBarEl.classList.contains('open')) {
                 sideBarEl.classList.remove('open');

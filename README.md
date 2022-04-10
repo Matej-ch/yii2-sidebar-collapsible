@@ -24,22 +24,27 @@ to the require section of your `composer.json` file.
 Setup
 -----
 
+#### Elements with **[data-sidebar-hide]** will be hidden when sidebar is collapsed
 
-[data-sidebar-hide] elements to hide when sidebar is collapsed
+Example
+```html
+<a><i class="fa fa-eye"></i> <span data-sidebar-hide='1'>This text is shown only when sidebar is not collapsed</span></a>
+``` 
 
-[data-sidebar-collapsible] elements that change padding when sidebar is collapsed
+#### Elements with **[data-sidebar-collapsible]** will update their left padding when is sidebar size has changed
+Example
+```html
+<div style="padding-left: 256px;" data-sidebar-collapsible="1"></div>
+```
 
-data-sidebar-collapsible="1" on elements
-
-put padding on elements by hand style="padding-left: 256px;
-
+### Sidebar example with custom content
 ```php 
 <?php Sidebar::begin([
 
 'collapseText' => 'Collapse' // optional text in button, defaults to Collapse
 'top' => '75px' // Fixed top, where sidebar begins, defaults to 0px
 'left' => '0px' // Fixed left, where sidebar begins on letf side, defaults to 0px
-
+//'sidebarCacheName' => 'test' // Name for saving state in localstorage
 ]) ?>
 
 <div>
