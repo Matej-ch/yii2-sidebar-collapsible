@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleHiddenElements();
             }
 
-            updatePadding(sideBarEl.offsetWidth);
+            let isMobile = false;
+            if(mediaQuery.matches) {isMobile  = true; }
+            updatePadding(sideBarEl.offsetWidth,isMobile);
         }
     }
 
@@ -76,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function updatePadding(sidebarWidth) {
+    function updatePadding(sidebarWidth,isMobile = false) {
+        if(isMobile) { return; }
         document.querySelectorAll('[data-sidebar-collapsible]').forEach(el => {
             el.style.paddingLeft = `${sidebarWidth}px`;
         });

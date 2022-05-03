@@ -76,7 +76,7 @@ class Sidebar extends Widget
 
         $content = ob_get_clean();
 
-        $html = '<div class="collapse-top-container"><div class="collapse-top-inner">';
+        $html = '<div class="collapse-top-container"><div class="collapse-top-inner" style="overflow-y: auto">';
 
         $html .= $content;
 
@@ -87,7 +87,7 @@ class Sidebar extends Widget
         return Html::tag('div', $html, ['class' => 'sidebar open','data' => ['sidebar' => $this->sidebarCacheName]]);
     }
 
-    public function registerClientScript()
+    public function registerClientScript(): void
     {
         $view = $this->getView();
         $view->registerCss(".sidebar {top:$this->top;left:$this->left;position:$this->position;} .sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
