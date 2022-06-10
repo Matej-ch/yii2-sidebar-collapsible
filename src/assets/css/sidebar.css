@@ -32,7 +32,8 @@
     flex-shrink: 0;
     margin: 8px 0;
     padding: 0 10px;
-    overflow: hidden
+    overflow: hidden;
+    align-items: center;
 }
 
 .collapse-top-container {
@@ -51,6 +52,10 @@
     margin: 8px 0;
     padding: 0 10px;
 }
+.sidebar.collapsed .collapse-btn-container {
+    align-items: center;
+}
+
 
 .collapse-bottom-container {
     display: flex;
