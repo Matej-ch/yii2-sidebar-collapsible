@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     topOffset += el.offsetHeight;
                 })
             })
-            sideBarEl.top = `${topOffset}px`;
+            sideBarEl.style.top = `${topOffset}px`;
         }
 
         if (localStorage.getItem(sidebarLocalStorageVarName)) {

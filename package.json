@@ -1,6 +1,6 @@
 {
   "name": "yii2-sidebar-collapsible",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Sidebar widget\r ====================\r Add sidebar that can be collapsed to smaller version",
   "main": "",
   "scripts": {
