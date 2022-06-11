@@ -2,7 +2,7 @@
   "name": "matejch/yii2-sidebar-collapsible",
   "description": "Add sidebar that can be collapsed to smaller version",
   "type": "yii2-widget",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "keywords": ["yii2","extension","sidebar","widget","collapsible"],
   "license": "MIT",
   "authors": [

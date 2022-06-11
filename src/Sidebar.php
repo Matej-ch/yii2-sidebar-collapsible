@@ -4,6 +4,8 @@ namespace matejch\yii2sidebar;
 
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\helpers\Json;
+use yii\web\View;
 
 class Sidebar extends Widget
 {
@@ -19,6 +21,12 @@ class Sidebar extends Widget
      * @var string
      */
     public $top = '0px';
+
+    /**
+     * Instead of using position top, simply add selectors, from which to calculate top position
+     * @var array
+     */
+    public $selectorsForTopOffset = [];
 
     /**
      * Top position from where sidebar starts for media query max-width: 1024px
@@ -90,7 +98,13 @@ class Sidebar extends Widget
     public function registerClientScript(): void
     {
         $view = $this->getView();
-        $view->registerCss(".sidebar {top:$this->top;left:$this->left;position:$this->position;} .sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
+        if(!empty($this->selectorsForTopOffset)) {
+            $selectors = Json::encode($this->selectorsForTopOffset);
+            $view->registerJs("window.sidebarTopOffsetSelectors=$selectors",View::POS_HEAD);
+            $view->registerCss(".sidebar {left:$this->left;position:$this->position;} .sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
+        } else {
+            $view->registerCss(".sidebar {top:$this->top;left:$this->left;position:$this->position;} .sidebar.open{width:$this->widthOpen;} .sidebar.collapsed{width:$this->widthCollapsed;} [data-sidebar-collapsible]{padding-left:$this->widthOpen;}");
+        }
         $view->registerCss("@media (max-width: 1024px) {.sidebar {top:$this->topMobile;left:$this->leftMobile;position:$this->positionMobile;}}");
         SidebarAsset::register($view);
     }
