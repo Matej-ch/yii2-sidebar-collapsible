@@ -25,6 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const sideBarToggleBtn = document.querySelector('.js-collapse-sidebar');
         const sideBarEl = sideBarToggleBtn.closest('.sidebar');
         const sidebarLocalStorageVarName = sideBarEl.dataset.sidebar;
+
+        if(window.sidebarTopOffsetSelectors) {
+            const sideBarEl = document.querySelector('.sidebar[data-sidebar]');
+            let topOffset = 0;
+
+            window.sidebarTopOffsetSelectors.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => {
+                    topOffset += el.offsetHeight;
+                })
+            })
+            sideBarEl.top = `${topOffset}px`;
+        }
+
         if (localStorage.getItem(sidebarLocalStorageVarName)) {
             sideBarEl.classList.remove('open');
             sideBarEl.classList.add('collapsed');
@@ -49,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 e.target.querySelector('.js-collapse-icon').style.transform = 'rotate(90deg)';
             }
-
 
             if (sideBarEl.classList.contains('open')) {
                 sideBarEl.classList.remove('open');
